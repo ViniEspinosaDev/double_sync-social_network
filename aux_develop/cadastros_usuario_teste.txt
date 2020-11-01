@@ -1,0 +1,34 @@
+Cadastros fictícios (teste)
+
+{
+	"email": "vini.espinosa1@gmail.com",
+	"password": "vinao3bola",
+	"name": "Vinícius Espinosa de Oliveira",
+	"biography": "Main Draven desde a season 1",
+	"gender": "Masculino",
+	"phone": "15997826699",
+	"dateRegistered": "2020-11-01",
+	"accountStatus": "active"
+}
+
+{
+	"email": "blazerbr@gmail.com",
+	"password": "leomarzeukaiser@123",
+	"name": "Jason Leonardo Marzeuski",
+	"biography": "Trader trilhonário e jogador de lol",
+	"gender": "Tupi-guarani",
+	"phone": "15997889945",
+	"dateRegistered": "2020-11-01",
+	"accountStatus": "active"
+}
+
+{
+	"email": "pera@gmail.com",
+	"password": "perinha123",
+	"name": "João Pêra Denner da Silva",
+	"biography": "Jogador de lol amador 33cm",
+	"gender": "Rockstar",
+	"phone": "40020922",
+	"dateRegistered": "2020-11-01",
+	"accountStatus": "active"
+}

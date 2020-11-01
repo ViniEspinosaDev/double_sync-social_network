@@ -1,0 +1,57 @@
+• Extensões:
+    - SQLite: Conseguir visualizar dados tabela dentro do banco sqlite
+
+• Instalações feitas:
+    - npm install express
+    - npm install @types/express -D (Comentário: Esse "-D" é para referenciar que irá exigir essa dependência apenas no desenvolvimento)
+    - npm install ts-node -D (Comentário: para rodar o projeto em typescript precisa disso)
+    - npm install typescript -D
+    - npx tsc --init (Comentário: Criar arquivo de configuração do typescript)
+    - npm install ts-node-dev -D (Comentário: Evita de ter que ficar parando "CTRL+C" e executando "npx ts-node src/server.ts")
+    - npm install knex (Comentário: Biblioteca para mexer com banco de dados Site: knexjs.org)
+    - npm install sqlite3 (Comentário: Instalar o pacote do banco de dados SQLite3)
+    - npm install cors (Comentário: Instalar o modulo cors pra definir quais externos vão acessar nosso backend)
+    - npm install @types/cors (instsalar tipo do cors pra funcionar no typescript)
+
+• Comandos:
+    - npx ts-node src/server.ts (Comentário: Executa o typescript manualmente)
+    - npx ts-node-dev src/server.ts (Comentário: Executa o typescript automaticamente)
+    - npx tsc --init (Comentário: Criar arquivo de configuração do typescript)
+    - npm run script (Comentário: Script deve ser criado na "package.json")
+    - npx knex migrate:latest --knexfile knexfile.ts migrate:latest (Esse comando deve ser executado
+        dentro da pasta raiz do projeto, no caso a 'server' contendo o knexfile.ts dentro da pasta raiz
+        todas as migrations dentro da pasta migration devem ter as funcoes up e down)
+
+• Pastas:
+    - package.json: Esse arquivo é responsável por armazenar as informações principais e as dependências do projeto.
+
+    - node_modules: Irá armazenar o código das dependências que a gente instalou.
+
+    - src: (source) armazenar todo código da aplicação dentro dessa pasta.
+
+• Arquivos:
+
+    - server.ts: (./src/server.ts) typescript para o backend.
+
+• dependências:
+    - express: Auxilia a interpretação de rotas para fazer a execução de tarefas para aquela rota.
+
+• Banco de dados:
+    - Utilizaremos para essa aplicação o SQLite, mas nada impede de usar outros como SQL Server, MySQL, MongoDB...
+    - Utilizaremos uma biblioteca chamada knex.js que suporta varios banco de dados. Utilizando ele não precisamos
+    nos preocupar em escrever as consultas SQL da forma tradicional (SELECT * FROM Users WHERE name = 'fabio'),
+    o próprio knex.js possui suas consultas em java script, sendo assim, caso eu esteja hoje usando o SQL Server e 
+    amanhã comece a usar o MongoDB não preciso me preocupar com nada pois o knex.js já converte toda a consulta
+
+• Comentários
+/* 
+ * Ao utilizar o type script precisamos importar a definição de tipos da biblioteca
+ * e não apenas a biblioteca.
+*/
+// App.use = serve para colocar um 'plugin'
+// express.json = serve para o express entender o corpo da requisição em formato json
+
+// Coments BD:
+    - Após criar a connection
+    - criaremos as migrations que seriam nossa estrutura do banco sla (olhar pastas)
+    - Depois da migrations, criaremos o 'knexfile.ts' no diretório raiz
