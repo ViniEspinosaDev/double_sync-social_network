@@ -1,0 +1,28 @@
+bom dia...
+
+- ontem dei continuidade na implementação dos cartões 46 e 47 da OP de retrabalho
+
+- faltava ajustar para não criar uma ficha de análise para o produto acabado ao liberar a op de retrabalho com o campo ficha de análise de
+op com o valor 'produto acabado e operacao'
+
+- testei tudo isso em SQL. Fiz bastante testes, encontrei várias falhas e conforme ia encontrando já ia arrumando. Até que testei o processo todo
+tanto em sql quanto em hana e não deu falha nenhuma.
+
+- consegui finalizar o cartão. Tive que mexer em uma classe no modulo de produção que é replica de uma no modulo qualidade
+então as alterações que fiz tive que passar para o modulo qualidade também
+
+- Abri todos os MRs de producao. Abri 2 MRs de qualidade também
+
+- Luiz fez o code review. Colocou alguns comentários nisso eu já arrumei
+
+- Depois de aceitar, ele abriu os MRs dele do cartão 20 e eu fiz o code review também.
+
+hoje:
+
+- vou atualizar minhas branchs para a develop e testar os cartões que estão pendente de testes. Deve ter uns 6 cartões fora os 4 meus para testar
+
+- acredito que seja necessário gerar a valida, vou alinhar isso com a Laíce
+
+- depois que terminar de testar esses cartões vou dar continuidade nos prints dos cartões para ajudar a laíce na documentação
+
+

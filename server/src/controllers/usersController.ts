@@ -13,7 +13,9 @@ class UsersController {
             gender,
             phone,
             dateRegistered,
-            accountStatus
+            accountStatus,
+            uf,
+            city
         } = request.body;
 
         // Atributos do usuário
@@ -25,7 +27,9 @@ class UsersController {
             gender,
             phone,
             dateRegistered,
-            accountStatus
+            accountStatus,
+            uf,
+            city
         }
 
         // Fazer inserção no banco
@@ -44,6 +48,16 @@ class UsersController {
         });
     }
 
+    // Mostar usuário
+    async show(request: Request, response: Response){
+        const id = request.params.id;
+
+        const user = await knex('users').select('*').where('id', id).first;
+
+        return response.json({
+            user
+        });
+    }
 }
 
 export default UsersController;

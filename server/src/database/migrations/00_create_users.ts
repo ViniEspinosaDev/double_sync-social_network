@@ -12,6 +12,8 @@ export async function up(knex: Knex) {
         table.string('phone');
         table.dateTime('dateRegistered').notNullable;
         table.string('accountStatus').notNullable;
+        table.string('uf').notNullable;
+        table.string('city').notNullable;
     });
 }
 

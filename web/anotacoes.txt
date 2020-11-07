@@ -1,0 +1,31 @@
+• Criação do projeto em node: npx create-react-app --template=typescript
+
+• Instalações:
+    - npm install react-icons (Comentário: Pacote de icones)
+    - npm install react-router-dom (Comentário: Lib de roteamento para muder de página HTML)
+    - npm install @types/react-router-dom (Comentário: Para tirar o erro de tipagem)
+    - npm install axios (Comentário: Biblioteca que permite fazer requisições ao backend node)
+
+• Estrutura do projeto:
+    - De início excluir todos os arquivos da pasta public exceto o index.html
+    - SPA (single page application): as páginas HTML consiste de apenas uma única página que é alterada
+    com o conteúdo na classe app.tsx que é diretamente chamada na index.html
+
+• Notes:
+    - JSX: Sintaxe de XML dentro do java script
+    - TSX: Sintaxe de XML dentro do type script
+
+• Conceito:
+    - Componentes: Facilidade de conseguir separar a aplicação em pequenos blocos que podem ser reutilizados
+    - Propriedade: São atribuito do elemento que a gente envia para o componente
+    - Estado: Armazenar uma informação a partir do componente (informações mantidas pelo próprio componente)
+
+• Componentes:
+    - Todo componente deve ter letra maiúscula no início
+    - Componentes: Facilidade de conseguir separar a aplicação em pequenos blocos que podem ser reutilizados
+
+• Estado:
+    - import React, { useState } from 'react';
+    - // useState retorna um array [valor do estado, função para atualizar o valor do estado];
+    - // Sempre que criamos um estado para um ARRAY ou OBJETO a gente precisa manualmente informar
+    - o tipo da variável que vai ser armazenada ali dentro (usar interface);

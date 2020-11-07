@@ -1,0 +1,14 @@
+.profileInfos-form {
+
+        position: -ms-page;
+        top: 0px;
+        width: 100%;
+        padding: 18px 6% 60px 6%;
+        margin: 0 0 35px 0;
+        background: rgb(247, 247, 247);
+        border: 1px solid rgba(16, 97, 107, 0.8);
+        
+        -webkit-box-shadow: 5px;
+        border-radius: 5px;
+
+}

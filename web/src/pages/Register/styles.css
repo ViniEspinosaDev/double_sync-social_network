@@ -1,0 +1,60 @@
+.principal{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-bottom: 50px;
+}
+.containerForms{
+	padding: 100px 75px;
+	background-color: rgba(8, 83, 102, 0.377);
+	border-radius: 10px;
+	text-align: center;
+}
+.containerForms form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.containerForms form input{
+	text-align: center;
+	margin: 10px;
+	padding: 10px ;
+	width: 500px;
+	border-radius: 10px;
+	border:0px;
+	font-size: 16px;
+	
+}
+
+.logo img{
+	width: 250px;
+	position: relative;
+	top:130px;
+
+}
+
+.botaoSubmit{
+	color: whitesmoke;
+	background-color: #2d5ff5;
+	font-weight: bold;
+	border: 0px;
+	font-size: 30px;
+	border-radius: 10px;
+	padding: 20px 0px;
+	width: 350px;
+	margin-top: 30px;
+	
+}
+
+.btnMostrarOcultarSenha{
+		position: absolute;
+		top: 583px;
+		right: 510px;
+		width: 100px;
+		text-align: center;
+		font-size: 11px;
+}
+
+::placeholder{color: #d3d3d3}

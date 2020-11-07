@@ -1,0 +1,23 @@
+:root {
+    --primary-color: #064cb4; /* Cor principal */
+    --title-color: #000000; /* Cor do título */
+    --text-color: #000000; /* Cor do texto */
+}
+
+body {
+    background: #cecece; /* Cor do fundo */
+}
+
+* {
+    margin: 0; /* Espaçamento da margem */
+    padding: 0; /* Espaço ao redor do conteúdo de um elemento */
+}
+
+body, input, button {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--title-color);
+    font-family: Ubuntu;
+}
