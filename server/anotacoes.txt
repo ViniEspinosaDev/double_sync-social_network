@@ -12,6 +12,8 @@
     - npm install sqlite3 (Comentário: Instalar o pacote do banco de dados SQLite3)
     - npm install cors (Comentário: Instalar o modulo cors pra definir quais externos vão acessar nosso backend)
     - npm install @types/cors (instsalar tipo do cors pra funcionar no typescript)
+    - npm install nodemailer (Comentário: Ferramenta para enviar email do node)
+    - npm install @types/nodemailer -D (Comentários: Instalar tipagem para nodemailer)
 
 • Comandos:
     - npx ts-node src/server.ts (Comentário: Executa o typescript manualmente)
