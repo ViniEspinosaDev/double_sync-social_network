@@ -26,28 +26,35 @@ const Register = () => {
     return (
         <div className="principal">
             <header>
-                <img src={logo} alt="Double Sync" />
+                
             </header>
 
             <form className="containerForms" >
                 <img src={logo_quadrada} alt="Double Sync logo" />
                 <h1>Cadastro de usuário</h1>
 
-                <input type="email" name="email" id="email" placeholder="e-mail" />
-                <input type={typePassword} name="password_first" id="password_first" placeholder="senha" />
-                <input type={typePassword} name="password_second" id="password_second" placeholder="confirme a senha" />
-                <br />
-                <button type="button" id="btnMostrarOcultarSenha" onClick={changePasswordType}>{buttonMessage}</button>
-
+                <div className="form-group">
+                <input type="email" name="email" id="email" placeholder="e-mail" className="inputs_form" />
+                <br/>
+                <input type={typePassword} name="password_first" id="password_first" placeholder="senha" className="inputs_form"/>
+                <br/>
+                <input type={typePassword} name="password_second" id="password_second" placeholder="confirme a senha" className="inputs_form"/>
+                </div>
+                
+                
+                <button type="button" id="btnMostrarOcultarSenha" onClick={changePasswordType} className ="button2">{buttonMessage}</button>
+                <br/>
+                <br/>
                 <span>Já tem uma conta?</span>
                 <Link to="/">
                     <span>
                         <FiArrowLeft />
                     </span>
                     <strong>Login</strong>
+                    <br/>
                 </Link >
-
-                <button type="submit" id="botaoSubmit">
+                <br/>
+                <button type="submit" id="botaoSubmit" className="button1">
                     Cadastrar
                 </button>
             </form>

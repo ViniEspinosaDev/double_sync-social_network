@@ -29,3 +29,17 @@
     - // useState retorna um array [valor do estado, função para atualizar o valor do estado];
     - // Sempre que criamos um estado para um ARRAY ou OBJETO a gente precisa manualmente informar
     - o tipo da variável que vai ser armazenada ali dentro (usar interface);
+
+
+
+
+• Adicionano o bootstrap (reactstrap) no projeto
+
+    - npm install --save bootstrap
+    - npm install --save reactstrap react react-dom
+
+    Import Bootstrap CSS in the src/index.js file:
+        import 'bootstrap/dist/css/bootstrap.min.css';
+
+    Import required reactstrap components within src/App.js file or your custom component files:
+        import { Button } from 'reactstrap';

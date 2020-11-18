@@ -70,7 +70,7 @@
 }
 
 .page-home .content main a span svg {
-    color: #FFF;
+    color: rgb(0, 0, 0);
     width: 20px;
     height: 20px;
 }
@@ -82,8 +82,52 @@
 }
 
 .page-home .content main a:hover {
-    background: #2097ca;
+    background: #000000;
 }
+
+.page-login {
+    margin-left: 150px;
+    align-items: center;
+    
+    
+    
+}
+
+.page-login h2{
+margin-left: 100px;
+  
+}
+
+.page-login img{
+    margin-left: 100px;
+      
+    }
+
+
+
+.form-group input {
+    margin: 10px;
+    
+    padding-left: 100px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0.5px;
+    
+}
+
+.logo-form img{
+    
+    
+    margin-bottom: 25px;
+}
+
+.header {
+    padding: 50px;
+}
+
+
+
+
 
 @media(max-width: 900px) {
     #page-home .content {
@@ -102,7 +146,8 @@
     width: 100%;
     padding: 18px 6% 60px 6%;
     margin: 0 0 35px 0;
-    background: rgb(247, 247, 247);
+    
+    background-color: rgba(34, 79, 90, 0.404);
     border: 1px solid rgba(16, 97, 107, 0.8);
     
     -webkit-box-shadow: 5px;
