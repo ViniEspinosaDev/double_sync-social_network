@@ -2,21 +2,21 @@ import Knex from 'knex';
 
 export async function up(knex: Knex) {
     return knex.schema.createTable('users', table => {
-        table.increments('id').primary();
-
-        table.string('email').notNullable;
-        table.string('password').notNullable;
-        table.string('name').notNullable;
+        table.string('id');
+        table.string('name');
+        table.string('email');
         table.string('biography');
-        table.string('gender').notNullable;
+        table.string('password');
+        table.string('gender');
         table.string('phone');
-        table.dateTime('dateRegistered').notNullable;
-        table.string('accountStatus').notNullable;
-        table.string('uf').notNullable;
-        table.string('city').notNullable;
+        table.string('birth');
+        table.string('dateRegistered');
+        table.string('accountStatus');
+        table.string('uf');
+        table.string('city');
     });
 }
 
-export async function down(knex: Knex){
+export async function down(knex: Knex) {
     return knex.schema.dropTable('users');
 }

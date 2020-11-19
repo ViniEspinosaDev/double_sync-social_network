@@ -11,8 +11,8 @@ const Routes =  () => {
     return (
         <BrowserRouter>
             <Route component={Home} path="/" exact />
-            <Route component={Register} path="/register" />
-            <Route component={ProfileInfos} path="/profile-infos/:id" />
+            <Route component={Register} path="/register" exact />
+            <Route component={ProfileInfos} path="/register/profile-info" exact />
         </BrowserRouter>
     )
 }

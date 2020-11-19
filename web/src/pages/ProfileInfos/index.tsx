@@ -5,7 +5,8 @@ import './styles.css';
 
 import logo from '../../assets/logo-horizontal.svg';
 import logo_quadrada from '../../assets/logo-quadrada.svg';
-//import api from '../../services/api';
+import api from '../../services/api';
+import { useHistory } from 'react-router-dom';
 
 /* Essa tela será aberta após a realização do cadastro para 
     que o usuário informe as seguintes informações
@@ -20,7 +21,7 @@ import logo_quadrada from '../../assets/logo-quadrada.svg';
     FUTURAMENTE ATRIBUIR PARA O USUÁRIO ESCOLHER JÁ UMA FOTO DE PERFIL E UMA FOTO DE CAPA PARA SEU PERFIL :)
 */
 
-//const history = useHistory();
+/* const history = useHistory(); */
 
 interface IBGEUFResponse {
     sigla: string

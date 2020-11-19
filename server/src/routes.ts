@@ -1,15 +1,10 @@
-import express from 'express';
+import { Router } from 'express';
+import { createUserController } from './useCases/CreateUser';
 
-import UsersController from './controllers/usersController'
+const routes = Router();
 
-const routes = express.Router();
-const user = new UsersController();
+routes.post('/register', (request, response) => {
+    return createUserController.handle(request, response);
+});
 
-//#region Rotas
-routes.post('/register', user.create);
-
-routes.get('register/:id', user.show);
-
-//#endregion
-
-export default routes;
+export { routes };

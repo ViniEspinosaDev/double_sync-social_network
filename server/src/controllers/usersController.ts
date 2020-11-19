@@ -1,5 +1,5 @@
 import { Response, Request } from 'express';
-import knex from '../database/connection';
+import knex from 'knex';
 
 class UsersController {
 
@@ -37,7 +37,7 @@ class UsersController {
         const user_id = usersIds[0];
 
         // Se deu erro
-        if(!user_id){
+        if (!user_id) {
             return response.status(400).json({ message: 'Falha ao fazer o cadastro.' });
         }
 
@@ -49,7 +49,7 @@ class UsersController {
     }
 
     // Mostar usuário
-    async show(request: Request, response: Response){
+    async show(request: Request, response: Response) {
         const id = request.params.id;
 
         const user = await knex('users').select('*').where('id', id).first;
@@ -60,4 +60,4 @@ class UsersController {
     }
 }
 
-export default UsersController;
+export { UsersController };
