@@ -1,1 +1,9 @@
 15/11/2020 - 02:08 - Erro na linha 38 do UsersRepository.ts ( const usersIds = await knex('users').insert(userCorrectly);)
+15/11/2020 - 09:20 - Erro na linha 38 CORRIGIDO
+
+
+
+
+
+Anotações futuras:
+15/11/2020 - 09:20 - Ao fazer o login verificar se o status da conta está como A

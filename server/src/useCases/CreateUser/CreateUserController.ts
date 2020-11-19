@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { User } from "../../entities/Users";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
 export class CreateUserController {
@@ -20,20 +21,10 @@ export class CreateUserController {
             city
         } = request.body;
 
+        const user = new User(name, email, biography, password, gender, phone, birth, dateRegistered, uf, city);
+
         try {
-            await this.createUserUseCase.execute({
-                name,
-                email,
-                biography,
-                password,
-                gender,
-                phone,
-                birth,
-                dateRegistered,
-                accountStatus,
-                uf,
-                city
-            })
+            await this.createUserUseCase.execute(user);
 
             return response.status(201).send();
         } catch (error) {
@@ -41,7 +32,5 @@ export class CreateUserController {
                 message: error.message || 'Erro inesperado.'
             });
         }
-
-
     }
 }
