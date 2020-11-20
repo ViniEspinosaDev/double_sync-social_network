@@ -8,30 +8,29 @@ export class UsersRepository implements IUsersRepository {
         var userData: User[] = await connection('users').select('*').where('email', email);
 
         if (userData.toString() === '') {
-            console.log('Primeira funcao: false');
             return false;
         }
 
-        console.log('Primeira funcao: true');
         return true;
     }
 
     async getUserByEmail(email: string): Promise<User> {
         var userData: User[] = await connection('users').select('*').where('email', email);
+        return userData[0];
+    }
 
+    async getUserByPassword(email: string, password: string): Promise<User> {
+        var userData: User[] = await connection('users').select('*').where('email', email).where('password', password);
         return userData[0];
     }
 
     async getUserById(id: string): Promise<User> {
         var userData: User[] = await connection('users').select('*').where('id', id);
-
         return userData[0];
     }
 
     async save(user: User): Promise<DIResult> {
-
         var diResult = new DIResult();
-
         const userCorrectly = {
             id: user.id,
             name: user.name,
@@ -59,7 +58,6 @@ export class UsersRepository implements IUsersRepository {
     }
 
     async update(user: User): Promise<DIResult> {
-
         var diResult = new DIResult();
         var updateResult = await connection('users')
             .where('id', '=', user.id)

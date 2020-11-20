@@ -15,12 +15,7 @@ export class DIResult {
     }
 
     isValid() {
-
-        if (this.success) {
-            return true;
-        }
-
-        return false;
+        return this.success;
     }
 
     getDIResultObject() {

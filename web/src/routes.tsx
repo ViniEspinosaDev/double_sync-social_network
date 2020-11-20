@@ -1,7 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter } from 'react-router-dom';
-
-// BrowserRouter: Forma de fazer roteamento através do browser
+import { Route, BrowserRouter, Redirect, RouteProps, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Register from './pages/Register';
@@ -9,13 +7,29 @@ import Register from './pages/Register';
 import ProfileInfos from './pages/ProfileInfos';
 import { Confirmation } from './pages/Register/Confirmation';
 
+import { isAuthenticated } from "./services/auth";
+import PageNotFound from "./pages/PageNotFound";
+import NotAuthenticated from './pages/NotAuthenticated';
+import Profile from './pages/User/Profile';
+import ProfileSettings from './pages/User/Settings';
+
+const PrivateRoute: React.FC<RouteProps> = (props) => {
+    return isAuthenticated() ? <Route {...props} /> : <Redirect to="/notAuthenticated" ></Redirect>
+};
+
 const Routes = () => {
     return (
         <BrowserRouter>
-            <Route component={Home} path="/" exact />
-            <Route component={Register} path="/register" exact />
-            <Route component={ProfileInfos} path="/register/profile-info" exact />
-            <Route component={Confirmation} path="/register/confirmation/:id" exact />
+            <Switch>
+                <Route component={Home} path="/" exact />
+                <Route component={Register} path="/register" exact />
+                <PrivateRoute component={ProfileInfos} path="/profile/create/:id" exact />
+                <Route component={Confirmation} path="/register/confirmation/:id" exact />
+                <Route component={NotAuthenticated} path="/notAuthenticated" exact />
+                <PrivateRoute component={Profile} path="/profile/:id" exact />
+                <PrivateRoute component={ProfileSettings} path="/profile/:id" exact />
+                <Route component={PageNotFound} path="*" />
+            </Switch>
         </BrowserRouter>
     )
 }

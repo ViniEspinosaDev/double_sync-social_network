@@ -1,4 +1,5 @@
 import { User } from "../../entities/Users";
+import { AccountStatusEnum, AccountStatusEnumValidation } from "../../enums/AccountStatusEnum";
 import { IEmailTransporterProvider } from "../../providers/IEmailTransporterProvider";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
@@ -6,7 +7,8 @@ export class GenericUseCase {
 
     constructor(
         private usersRepository: IUsersRepository,
-        private mailProvider: IEmailTransporterProvider
+        private mailProvider: IEmailTransporterProvider,
+        private accountStatusEnumValidation: AccountStatusEnumValidation
     ) { }
 
     async getUserByEmail(email: string) {
@@ -19,6 +21,10 @@ export class GenericUseCase {
         var user = await this.usersRepository.getUserById(id);
 
         return user;
+    }
+
+    async getUserByPassword(email: string, password: string) {
+        return this.usersRepository.getUserByPassword(email, password);
     }
 
     async sendConfirmationEmail(user: User, emailBody: string) {
@@ -34,5 +40,46 @@ export class GenericUseCase {
             subject: 'E-mail de confirmação da conta',
             body: `${emailBody}`
         });
+    }
+
+
+    async validEmail(email: string): Promise<boolean> {
+        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
+            return true;
+        }
+        return false;
+    }
+
+    async emailPasswordAreEmpty(email: string, password: string): Promise<boolean> {
+        if (email === '' || password === '')
+            return true;
+
+        return false;
+    }
+
+    async passwordsAreEquals(password1: string, password2: string): Promise<boolean> {
+
+        if (password1 === password2) {
+            return true;
+        }
+
+        return false;
+    }
+
+    async emailAlreadyRegistered(email: string): Promise<Boolean> {
+        return await this.usersRepository.findByEmail(email);
+    }
+
+    async getAccountStatusEnum(email: string) {
+        let user = await this.usersRepository.getUserByEmail(email);
+        return this.accountStatusEnumValidation.returnEnumByString(user.accountStatus);
+    }
+
+    async userIsActive(email: string): Promise<Boolean> {
+        let accountStatusEnum = await this.getAccountStatusEnum(email);
+        if (accountStatusEnum === AccountStatusEnum.Enabled) {
+            return true;
+        }
+        return false;
     }
 }

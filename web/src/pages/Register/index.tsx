@@ -1,6 +1,6 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowLeft, FiEyeOff, FiEye } from 'react-icons/fi';
+import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
 import { useHistory } from 'react-router-dom';
 
@@ -58,7 +58,7 @@ const Register = () => {
         const confirmPassword = event.target.value;
         setFormData({ ...formData, confirmPassword });
         setTextErrorScreen("");
-        console.log(comparePasswords(formData.password, confirmPassword));
+        //comparePasswords(formData.password, confirmPassword)
     }
 
     function changePasswordType() {

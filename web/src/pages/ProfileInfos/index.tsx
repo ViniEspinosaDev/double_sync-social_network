@@ -6,7 +6,7 @@ import './styles.css';
 import logo from '../../assets/logo-horizontal.svg';
 import logo_quadrada from '../../assets/logo-quadrada.svg';
 import api from '../../services/api';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 /* Essa tela será aberta após a realização do cadastro para 
     que o usuário informe as seguintes informações
@@ -361,9 +361,10 @@ const ProfileInfos = () => {
         setFormData({ ...formData, [name]: value });
     }
 
-    async function handleSubmit(event: FormEvent) {
+    async function HandleSubmit(event: FormEvent) {
         event.preventDefault();
 
+        const userId = useLocation().pathname.split('/').pop();
         const { name, birth, biography } = formData;
         const country = selectedCountry;
         const uf = selectedUf;
@@ -371,6 +372,7 @@ const ProfileInfos = () => {
         const sex = selectedSex;
 
         const data = {
+            id: userId,
             name,
             birth,
             biography,
@@ -380,12 +382,9 @@ const ProfileInfos = () => {
             sex
         };
 
-        // Aqui deve atualizar o cadastro que já foi feito anteriormente com o email e a senha
-        // Pesquisar como atualiza um registro em react/node
-        // Pesquiser como passar o ID para um formulário, pois esse formulário precisa do ID do cadastro
-    
         console.log(data);
-        //const id = await api.put('', data);
+        const response = await api.put('/profile/create', data);
+        console.log(response);
 
         // if (id) {
         //     alert('Cadastro atualizado com sucesso.');
@@ -403,7 +402,7 @@ const ProfileInfos = () => {
             <header>
                 <img src={logo} alt="Double Sync Logo"></img>
             </header>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={HandleSubmit}>
                 <img src={logo_quadrada} alt="Double Sync Logo"></img>
                 <h1>Bem vindo(a)! Está na hora de criar seu perfil</h1>
                 <p>Preencha os seguintes campos e depois clique em continuar</p>

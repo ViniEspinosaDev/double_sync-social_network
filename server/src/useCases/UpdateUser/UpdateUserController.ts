@@ -27,14 +27,14 @@ export class UpdateUserController {
 
             let user;
 
-            if (id != '') {
+            if (id !== '') {
                 user = await this.genericUseCase.getUserById(id);
             } else {
                 user = await this.genericUseCase.getUserByEmail(email);
             }
 
             if (!user) {
-                throw new Error;
+                return response.status(404).json({ message: 'Usuário não encontrado.' });
             }
 
             user.name = name === '' ? user.name : name;
