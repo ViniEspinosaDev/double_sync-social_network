@@ -37,7 +37,6 @@ export class UpdateUserController {
                 throw new Error;
             }
 
-
             user.name = name === '' ? user.name : name;
             user.biography = biography === '' ? user.biography : biography;
             user.password = password === '' ? user.password : password;

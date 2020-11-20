@@ -1,18 +1,41 @@
 export class DIResult {
-    public success: boolean = true;
-    public errorCode: number = 0;
-    public messageError: string = '';
+    private success: boolean = true;
+    private errorCode: number = 0;
+    private messageError: string = '';
     public ids!: number[];
-
-    // constructor(Success: boolean, ErrorCode: number, MessageError: string, Ids: Array<string>) {
-    //     this.success = Success;
-    //     this.errorCode = ErrorCode;
-    //     this.messageError = MessageError;
-    //     this.ids = Ids;
-    // }
 
     returnIds() {
         return this.ids;
     }
 
+    addMessageError(errorCode: number, message: string) {
+        this.errorCode = errorCode;
+        this.messageError = message;
+        this.success = false;
+    }
+
+    isValid() {
+
+        if (this.success) {
+            return true;
+        }
+
+        return false;
+    }
+
+    getDIResultObject() {
+        return {
+            errorCode: this.errorCode,
+            "messageError": this.messageError,
+            "success": this.success
+        };
+    }
+
+    getErrorCode() {
+        return this.errorCode;
+    }
+
+    getMessage() {
+        return this.messageError;
+    }
 }

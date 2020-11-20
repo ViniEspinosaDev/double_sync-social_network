@@ -8,9 +8,11 @@ export class UsersRepository implements IUsersRepository {
         var userData: User[] = await connection('users').select('*').where('email', email);
 
         if (userData.toString() === '') {
+            console.log('Primeira funcao: false');
             return false;
         }
 
+        console.log('Primeira funcao: true');
         return true;
     }
 
@@ -49,11 +51,8 @@ export class UsersRepository implements IUsersRepository {
         diResult.ids = usersIds;
 
         if (!usersIds[0]) {
-            diResult.errorCode = 400;
-            diResult.messageError = 'Não foi possível criar o novo usuário.';
-            diResult.success = false;
-        } else {
-            diResult.success = true;
+            let messageError = 'Não foi possível criar o novo usuário.';
+            diResult.addMessageError(400, messageError);
         }
 
         return diResult;
@@ -78,13 +77,9 @@ export class UsersRepository implements IUsersRepository {
                 'city': user.city
             });
 
-        if (updateResult === 1) {
-            diResult.errorCode = 0;
-            diResult.success = true;
-        } else {
-            diResult.errorCode = 400;
-            diResult.messageError = 'Falha ao atualizar cadastro de usuário.';
-            diResult.success = false;
+        if (updateResult !== 1) {
+            let messageError = 'Falha ao atualizar cadastro de usuário.';
+            diResult.addMessageError(400, messageError);
         }
 
         return diResult;

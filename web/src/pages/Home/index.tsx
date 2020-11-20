@@ -13,7 +13,7 @@ const Home = () => {
         <div className="page-home">
             <div className="content">
                 <header className="header">
-                    
+
                 </header>
                 <div className="row">
                     <div className="col-sm-6">

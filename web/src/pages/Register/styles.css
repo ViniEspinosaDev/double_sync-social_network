@@ -90,12 +90,13 @@
 
   .form-group input {
     margin: 10px;
-    
-    padding-left: 100px;
+	
+	display: inline-block;
+	width: 280px;
     border-radius: 5px;
     border-style: solid;
     border-width: 0.5px;
-    
+    padding-left: 5px;
 }
   
   .button1:hover {
@@ -109,3 +110,7 @@
   }
 
 ::placeholder{color: #d3d3d3}
+
+#errorText{
+	color: red;
+}

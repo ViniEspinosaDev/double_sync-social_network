@@ -1,5 +1,6 @@
 import { v4 } from 'uuid';
 import { AccountStatusEnum } from '../enums/AccountStatusEnum';
+import { DIResult } from './DIResult';
 
 export class User {
     public readonly id!: string;

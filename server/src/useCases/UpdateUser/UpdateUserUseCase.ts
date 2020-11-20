@@ -9,8 +9,6 @@ export class UpdateUserUseCase {
     ) { }
 
     async execute(user: User) {
-        var diResult = await this.usersRepository.update(user);
-
-        return diResult;
+        return await this.usersRepository.update(user);
     }
 }
