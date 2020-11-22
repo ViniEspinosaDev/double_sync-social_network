@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.updateUserController = exports.updateUserUseCase = exports.genericUseCase = void 0;
+const UsersRepository_1 = require("../../repositories/implementations/UsersRepository");
+const UpdateUserController_1 = require("./UpdateUserController");
+const UpdateUserUseCase_1 = require("./UpdateUserUseCase");
+const GenericUseCase_1 = require("../Generic/GenericUseCase");
+const EmailTransporterProvider_1 = require("../../providers/implementations/EmailTransporterProvider");
+const AccountStatusEnum_1 = require("../../enums/AccountStatusEnum");
+const usersRepository = new UsersRepository_1.UsersRepository();
+const emailTransporterProvider = new EmailTransporterProvider_1.EmailTransporterProvider();
+const accountStatusEnumValidation = new AccountStatusEnum_1.AccountStatusEnumValidation();
+const updateUserUseCase = new UpdateUserUseCase_1.UpdateUserUseCase(usersRepository);
+exports.updateUserUseCase = updateUserUseCase;
+const genericUseCase = new GenericUseCase_1.GenericUseCase(usersRepository, emailTransporterProvider, accountStatusEnumValidation);
+exports.genericUseCase = genericUseCase;
+const updateUserController = new UpdateUserController_1.UpdateUserController(updateUserUseCase, genericUseCase);
+exports.updateUserController = updateUserController;
