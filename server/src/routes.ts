@@ -33,4 +33,8 @@ routes.post('/profile/settings', (request, response) => {
     return updateUserController.handle(request, response);
 });
 
+routes.put('/forget-password', (request, response) => {
+    return updateUserController.handle(request, response);
+});
+
 export { routes };

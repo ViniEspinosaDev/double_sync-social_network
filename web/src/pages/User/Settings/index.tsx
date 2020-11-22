@@ -1,8 +1,14 @@
 import React from 'react';
+import AuthenticatedHeader from '../../Components/authenticatedHeader';
 
 const ProfileSettings = () => {
+
     return (
-        <h2>Tela de configuracao da conta. Em construcao</h2>
+        <div>
+            <AuthenticatedHeader />
+            <h1>Em breve...</h1>
+            <h4>Tela de configuracao da conta.</h4>
+        </div>
     )
 };
 

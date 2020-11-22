@@ -7,6 +7,6 @@ export class LoginUseCase {
 
     async execute() {
         // Fazer a criação do token
-        return true;
+        return true; // Token
     }
 }

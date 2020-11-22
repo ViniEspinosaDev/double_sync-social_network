@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../Header';
 
-export const pageNotFound = () => {
+const PageNotFound = () => {
     return (
         <div>
             <Header title="Page not found" ></Header>
@@ -13,4 +13,4 @@ export const pageNotFound = () => {
     );
 };
 
-export default pageNotFound;
+export default PageNotFound;

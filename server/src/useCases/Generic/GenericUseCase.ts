@@ -42,6 +42,24 @@ export class GenericUseCase {
         });
     }
 
+    async sendEmailConfirmationToChangePassword(email: string) {
+        const user = await this.getUserByEmail(email);
+        const confirmationLink = `http://localhost:3000/forget-password/${user.id}`;
+        const emailBody = `<p>Para alterar sua senha, clique no seguinte link.<p><br/><a href="${confirmationLink}">Alterar senha</a>`;
+
+        await this.mailProvider.sendMail({
+            to: {
+                name: user.name,
+                email: email
+            },
+            from: {
+                name: 'Double Sync Team',
+                email: 'doublesync2020@gmail.com'
+            },
+            subject: 'E-mail de confirmação da conta',
+            body: `${emailBody}`
+        });
+    }
 
     async validEmail(email: string): Promise<boolean> {
         if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {

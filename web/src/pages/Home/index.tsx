@@ -7,6 +7,7 @@ import './styles.css';
 
 import logo_quadrada from '../../assets/logo-quadrada.svg';
 import api from '../../services/api';
+import { login } from '../../services/auth';
 
 const Home = () => {
 
@@ -30,16 +31,27 @@ const Home = () => {
         setTextErrorLabel("");
     }
 
+    async function handleForgetPassword() {
+        try {
+            const data = { ...formData, forgetPassword: true };
+            const response = await api.post('/forget-password', data);
+            console.log(response);
+            alert(response.data.message);
+        } catch (error) {
+            setTextErrorLabel(error.response.data.message);
+        }
+    }
+
     async function HandleSubmitLogin(event: FormEvent) {
         event.preventDefault();
 
         try {
             const response = await api.post('/login', formData);
             let { token, userId, profileCreated } = response.data;
-            console.log(response);
 
             // Precisa pegar o token e definir no localStorage xD
-            console.log(profileCreated)
+            login(token);
+
             // Se o perfil ainda não estiver criado
             if (!profileCreated) {
                 history.push(`/profile/create/${userId}`);
@@ -88,7 +100,7 @@ const Home = () => {
                                     <p id="errorText" >{textErrorLabel}</p>
                                 </div>
 
-                                <Link to="/forget-password">
+                                <Link to="/forget-password/1" onClick={handleForgetPassword}>
                                     <p>Esqueci minha senha</p>
                                 </Link>
 

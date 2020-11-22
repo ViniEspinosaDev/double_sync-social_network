@@ -3,7 +3,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import Header from '../../Header';
 
-export const notAuthenticated = () => {
+const NotAuthenticated = () => {
     return (
         <div>
             <Header title="NotAuthenticated"></Header>
@@ -19,4 +19,4 @@ export const notAuthenticated = () => {
     );
 }
 
-export default notAuthenticated;
+export default NotAuthenticated;

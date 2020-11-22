@@ -29,9 +29,9 @@ export class LoginController {
 
             let userId = (await this.genericUseCase.getUserByEmail(email)).id;
 
-
             // Se passar pelas validações, chamar a LoginUseCase com o token
-            let token = await this.loginUseCase.execute();
+            //let token = await this.loginUseCase.execute();
+            let token = userId;
 
             return response.status(201).json({ token: token, profileCreated: verifyProfileHasCreated, message: 'Logado', userId: userId });
         } catch (error) {
