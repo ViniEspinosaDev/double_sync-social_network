@@ -2,6 +2,9 @@
 
 Double Sync
 
+Email para contato: vini.espinosa1@gmail.com
+WhatsApp: 15 99782-6699
+
 **Link de um documento mais explicativo:** https://drive.google.com/file/d/1tr_edMBTESaS8eZN3TRZlG3CLK9cjaY5/view?usp=sharing
 
 Como executar o site – Double Sync
