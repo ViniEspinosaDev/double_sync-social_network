@@ -6,27 +6,27 @@ Double Sync
 
 Como executar o site – Double Sync
 
-1º Passo: Tenha instalado em sua máquina o Node JS e Git Bash
+**1º Passo: Tenha instalado em sua máquina o Node JS e Git Bash**
 - Link do NodeJS: https://nodejs.org/pt-br/download/
 - Link do Git Bash: https://git-scm.com/downloads
 
 
-2º Passo: Git Hub
+**2º Passo: Git Hub**
 - Acesse: https://github.com/ViniEspinosaDev/double_sync-social_network
 - Clique no botão verde “Code” e copie o link.
 
 
-3º Passo: Clone o repositório
+**3º Passo: Clone o repositório**
 - Link do clone: https://github.com/ViniEspinosaDev/double_syncsocial_network.git
 
 
-4º Passo: Abra a pasta do projeto
+**4º Passo: Abra a pasta do projeto**
 - O git clone criará a seguinte pasta "double_sync-social_network"
 - Abra a pasta
 - Abra o CMD nessa pasta:
 
 
-4º Passo: Digite e execute os seguintes comandos em sequencia
+**5º Passo: Digite e execute os seguintes comandos em sequencia**
 Comando: cd server
 - Para o seguinte comando é necessário ter o NodeJS instalado
 Comando: npm install
@@ -39,7 +39,7 @@ Comando: cd web
 Comando: npm install
 
 
-5º Passo: Criar o banco de dados sqlite3
+**6º Passo: Criar o banco de dados sqlite3**
 - No mesmo terminal digite e execute:
 Comando: cd ..
 Comando: cd server
