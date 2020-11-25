@@ -16,14 +16,19 @@ const AuthenticatedHeader = () => {
     }
 
     return (
+        <div id="cabecalho">
+
+        <div className="informcacao">
         <header>
             <h1>Cabeçalho da página</h1>
-
+        </header>
             <div>
                 <button type="button" onClick={doLogout}>Logout</button>
                 <button type="button" onClick={goConfigs}>Configurações</button>
             </div>
-        </header>
+            </div>
+        
+        </div>
     );
 }
 

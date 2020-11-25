@@ -5,6 +5,7 @@
 	justify-content: center;
 	flex-direction: column;
 	margin-bottom: 50px;
+	text-align: center;
 }
 .containerForms{
 	margin-top: 50px;
@@ -63,7 +64,7 @@
 }
 
 .button1 {
-	background-color: #01579B; /* Green */
+	background-color: #01579B; 
 	border: none;
 	color: white;
 	padding: 15px 32px;
@@ -76,7 +77,7 @@
   }
 
   .button2 {
-	background-color: #01579B; /* Green */
+	background-color: #01579B; 
 	border: none;
 	color: white;
 	padding: 5px 13px;

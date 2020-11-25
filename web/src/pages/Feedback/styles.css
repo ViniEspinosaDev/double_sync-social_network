@@ -1,0 +1,42 @@
+.div-principal{
+	text-align: center;
+}
+
+.forms {
+	
+	margin-left: 500px;
+	margin-right: 500px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	background: rgb(66, 116, 158);
+	border-radius: 5px;
+}
+
+.forms input {
+	margin: 15px;
+	text-align: center;
+}
+
+.forms textarea {
+	margin: 15px;
+	text-align: center;
+}
+
+.button {
+	background-color: #01579B; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 7px;
+	transition-duration: 0.4s;
+}
+
+.button:hover {
+	background-color: #015764; /* Green */
+	color: white;
+  }
+

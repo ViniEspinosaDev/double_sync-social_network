@@ -27,6 +27,7 @@ const Routes = () => {
                 <Route component={Register} path="/register" exact />
                 <Route component={Feedback} path="/feedback" exact />
                 <PrivateRoute component={ProfileInfos} path="/profile/create/:id" exact />
+                <Route component={ProfileInfos} path="/profile/create/:id" exact />
                 <Route component={Confirmation} path="/register/confirmation/:id" exact />
                 <Route component={NotAuthenticated} path="/notAuthenticated" exact />
                 <PrivateRoute component={Profile} path="/profile/:id" exact />

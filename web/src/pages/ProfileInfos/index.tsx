@@ -117,134 +117,135 @@ const ProfileInfos = () => {
     }
 
     return (
-        <div className="page-profileInfos" >
-        <header>
-
-        </header>
-        
-        <div className="form">
-   
-
-            <div className="col-sm-4">
-
-            </div>
-            <div className="col-sm-4">
-
-            
-            <form onSubmit={HandleSubmit} className="form-group">
-                <img src={logo_quadrada} alt="Double Sync Logo"></img>
-                <h1>Bem vindo(a)! Está na hora de criar seu perfil</h1>
-                <p>Preencha os seguintes campos e depois clique em continuar</p>
-
-                <div className="infos">
-
-                <fieldset>
-                    <legend>
-                        <h2>Dados</h2>
-                    </legend>
-
-                    <div className="field">
-                    
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            onChange={handleInputChange}
-                            placeholder="Nome"
-                        />
-                    </div>
-
-                    <div className="field-group">
-                        <div className="field">
-                            
-                            <select name="sex" id="sex" value={selectedSex} onChange={handleSelectSex}>
-                                <option value="0">Selecione um sexo</option>
-                                <option value="male">Masculino</option>
-                                <option value="female">Feminino</option>
-                                <option value="none">Prefiro não informar</option>
-                            </select>
-                        </div>
-                        <div className="field">
-                            
-                            <input
-                                type="date"
-                                name="birth"
-                                id="birth"
-                                onChange={handleInputChange}
-                                placeholder="Nascimento"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="field">
-                        
-                        <input
-                            type="text"
-                            name="biography"
-                            id="biography"
-                            onChange={handleInputChange}
-                            placeholder="Biografia"
-
-                        />
-                    </div>
-                </fieldset>
-                </div>
-                <div className="infos">
-
-                
-                <fieldset>
-                    <legend>
-                        <h2>Endereço</h2>
-                    </legend>
-                    <div className="field">
-                        
-                        <select
-                            name="country"
-                            id="country"
-                            value={selectedCountry}
-                            onChange={handleSelectCountry}
-                            placeholder="País">
-                            
-
-                            <option value="0">Selecione um pais</option>
-                            {getCountriesName().map(country => (
-                                <option key={country} value={country}>{country}</option>
-                            ))}
-                        </select>
-                    </div>
-
-                    <div className="field-group">
-                        <div className="field">
-                            
-                            <select name="uf" id="uf" value={selectedUf} onChange={handleSelectUf}>
-                                <option value="0">Selecione uma UF</option>
-                                {ufs.map(uf => (
-                                    <option key={uf} value={uf}>{uf}</option>
-                                ))}
-                            </select>
-                        </div>
-                        <div className="field">
-                            
-                            <select name="city" id="city" value={selectedCity} onChange={handleSelectCity}>
-                                <option value="0">Selecione uma cidade</option>
-                                {cities.map(city => (
-                                    <option key={city} value={city}>{city}</option>
-                                ))}
-                            </select>
-                        </div>
-                    </div>
+        <div id="dados-profile">
+            <div className="page-profileInfos" >
 
 
-                </fieldset>
+
+
+                <div className="col-sm-6">
+                    <img src={logo_quadrada} alt="Double Sync Logo"></img>
+                    <h1>Bem vindo(a)!</h1>
+                         <br/>
+                         <h1>Está na hora de criar seu perfil</h1>
+                    <p>Preencha os seguintes campos e depois clique em continuar</p>
                 </div>
 
-                <button type="submit" className="button1">Continuar</button>
-            </form>
+                <div className="col-sm-6">
+
+
+                    <form onSubmit={HandleSubmit} className="form-group">
+
+
+                        <div className="infos">
+
+                            <fieldset>
+                                <legend>
+                                    <h2>Dados</h2>
+                                </legend>
+
+                                <div className="field">
+
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        onChange={handleInputChange}
+                                        placeholder="Nome"
+                                    />
+                                </div>
+
+                                <div className="field-group">
+                                    <div className="field">
+
+                                        <select name="sex" id="sex" value={selectedSex} onChange={handleSelectSex}>
+                                            <option value="0">Selecione um sexo</option>
+                                            <option value="male">Masculino</option>
+                                            <option value="female">Feminino</option>
+                                            <option value="none">Prefiro não informar</option>
+                                        </select>
+                                    </div>
+                                    <div className="field">
+
+                                        <input
+                                            type="date"
+                                            name="birth"
+                                            id="birth"
+                                            onChange={handleInputChange}
+                                            placeholder="Nascimento"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="field">
+
+                                    <input
+                                        type="text"
+                                        name="biography"
+                                        id="biography"
+                                        onChange={handleInputChange}
+                                        placeholder="Biografia"
+
+                                    />
+                                </div>
+                            </fieldset>
+                        
+
+
+                            <fieldset>
+                                <legend>
+                                    <h2>Endereço</h2>
+                                </legend>
+                                <div className="field">
+
+                                    <select
+                                        name="country"
+                                        id="country"
+                                        value={selectedCountry}
+                                        onChange={handleSelectCountry}
+                                        placeholder="País">
+
+
+                                        <option value="0">Selecione um pais</option>
+                                        {getCountriesName().map(country => (
+                                            <option key={country} value={country}>{country}</option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                                <div className="field-group">
+                                    <div className="field">
+
+                                        <select name="uf" id="uf" value={selectedUf} onChange={handleSelectUf}>
+                                            <option value="0">Selecione uma UF</option>
+                                            {ufs.map(uf => (
+                                                <option key={uf} value={uf}>{uf}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <div className="field">
+
+                                        <select name="city" id="city" value={selectedCity} onChange={handleSelectCity}>
+                                            <option value="0">Selecione uma cidade</option>
+                                            {cities.map(city => (
+                                                <option key={city} value={city}>{city}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                            </fieldset>
+                        </div>
+
+                        <button type="submit" className="button1">Continuar</button>
+                    </form>
+                </div>
+
+
             </div>
-            <div className="col-sm-4"></div>
-            
         </div>
-    </div>
+
     );
 };
 
